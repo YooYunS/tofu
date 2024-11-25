@@ -45,7 +45,7 @@ def main(cfg):
     set_seed(cfg.seed)
     os.environ["WANDB_DISABLED"] = "true"
     model_cfg = get_model_identifiers_from_yaml(cfg.model_family)
-    model_id = model_cfg["hf_key"]
+    model_id = "ryan0712/Llama-3.2-8B-single-inserted"    # model_cfg["hf_key"]
 
     Path(cfg.save_dir).mkdir(parents=True, exist_ok=True)
     # save the cfg file
