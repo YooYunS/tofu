@@ -128,9 +128,12 @@ def main(cfg):
     if cfg.LoRA.r != 0:
         model = model.merge_and_unload()
 
+    model_name = "ryan0712/Llama-3.2-8B-single-inserted-tuned"
+    model.push_to_hub(model_name)
+    tokenizer.push_to_hub(model_name)
 
-    model.save_pretrained(cfg.save_dir)
-    tokenizer.save_pretrained(cfg.save_dir)
+    # model.save_pretrained(cfg.save_dir)
+    # tokenizer.save_pretrained(cfg.save_dir)
 
 if __name__ == "__main__":
     main()
